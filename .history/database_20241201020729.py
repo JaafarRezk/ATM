@@ -52,7 +52,6 @@ def get_balance(username):
     conn.close()
     return result[0] if result else None
 
-
 def update_balance(username, new_balance):
     conn = sqlite3.connect('atm.db')
     cursor = conn.cursor()

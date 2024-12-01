@@ -49,7 +49,6 @@ def decrypt_rsa(private_key, ciphertext):
         )
     ).decode()
 
-
 def save_rsa_keys(private_key, public_key):
     with open("private_key.pem", "wb") as private_file:
         private_file.write(

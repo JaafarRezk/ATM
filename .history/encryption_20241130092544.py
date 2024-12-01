@@ -17,7 +17,6 @@ def hash_password(password):
     key = kdf.derive(password.encode())
     return key.hex()
 
-
 def generate_rsa_keys():
     private_key = rsa.generate_private_key(
         public_exponent=65537,
@@ -26,7 +25,6 @@ def generate_rsa_keys():
     )
     public_key = private_key.public_key()
     return private_key, public_key
-
 
 def encrypt_rsa(public_key, plaintext):
     return public_key.encrypt(
@@ -38,7 +36,6 @@ def encrypt_rsa(public_key, plaintext):
         )
     )
 
-
 def decrypt_rsa(private_key, ciphertext):
     return private_key.decrypt(
         ciphertext,
@@ -48,7 +45,6 @@ def decrypt_rsa(private_key, ciphertext):
             label=None
         )
     ).decode()
-
 
 def save_rsa_keys(private_key, public_key):
     with open("private_key.pem", "wb") as private_file:
